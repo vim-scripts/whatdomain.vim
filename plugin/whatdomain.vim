@@ -1,12 +1,12 @@
 " WhatDomain
 " Maintainer:	Michael Piefel <piefel@informatik.hu-berlin.de>
 " Licence:	Public Domain
-" Last Change:	2001 August 20
+" Last Change:	2001 September 19
 
 " This function returns the meaning of a Top Level Domain
 " Usage: :call WhatDomain('de') will print 'DE: Germany'
-function WhatDomain(...)
-    if a:0 < 1
+function! WhatDomain(...)
+    if a:0 < 1 || a:1 == ""
 	let tld=input("Domain: ")
     else
 	let tld=a:1
@@ -278,7 +278,7 @@ function WhatDomain(...)
     if exists("TLD_" . tld)
 	echo "\r" . tld . ": " . TLD_{tld}
     else
-	echohl WarningMsg | echo '\rUnknown domain' | echohl None
+	echohl WarningMsg | echo "\rUnknown domain" | echohl None
     endif
 endfun
-command -nargs=0 WhatDomain call WhatDomain()
+command! -nargs=? WhatDomain call WhatDomain(<q-args>)
