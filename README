@@ -1,0 +1,6 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=62
+
+If you ever wondered what country the domain .tv belonged to, you had to look it up in some database - you had to leave Vim. No More!
+This plugin offers you a simple function which will identify the domain and print it out. You can call the function WhatDomain directly (with one string argument, the TLD), ot even better, use the following command on the Vim command line:
+    :WhatDomain
+It will ask you for the domain you want to have identified and subsequently prints out which country or category this domain belongs to. You can also pass the domain you ask for as a parameter (:WhatDomain de) or use the function call syntax (:call WhatDomain).
